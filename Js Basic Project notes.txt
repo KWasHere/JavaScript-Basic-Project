@@ -1,0 +1,86 @@
+//Simple project done to review Javascript
+const name = prompt("What's your name?") // Will prompt user with the comments and input
+const age = prompt('How old are you?'); // Will prompt user with the comments and input
+//using if else statement for user input
+if (age < 20) {
+  greeting = "A boy";
+} else if (age >= 21 && age <= 30){
+  greeting = "A man";
+} else {
+greeting = "A legend";
+}
+console.log(`Your name is ${name} and you are ${age} years old. ${greeting}`); // Will prompt user with the comments and given input
+
+// starting here its about math 
+var num1 = parseInt(prompt('Insert first number.', '0')); //To parse the number received into integers
+var num2 = parseInt(prompt('Insert second number. ', '0')); //To parse the number received into integers
+var sum1 = num1 + num2;
+var sum2 = num1 - num2;
+var sum3 = num1 / num2;
+sum3 = sum3.toFixed(2);
+var sum4 = num1 * num2;
+
+console.log(`The sum of ${num1} added to ${num2} is ${sum1}.`);
+console.log(`The sum of ${num1} subtracted by ${num2} is ${sum2}.`);
+console.log(`The sum of ${num1} devided to ${num2} is ${sum3}.`);
+console.log(`The sum of ${num1} multiplied by ${num2} is ${sum4}.`);
+
+//starting here its about date and time
+var today= new Date();
+console.log(today.getDate()); // Will show day as a number (31) instead of 31st
+console.log(today.getMonth()); // will show month as a number (8) instead of August
+console.log(today.getFullYear()); // Will show year as number(2022)
+console.log(today.getHours()); // Will show hours
+console.log(today.getMinutes()); // Will show minutes
+console.log(today.getSeconds()); // WIll show seconds
+console.log(today);
+
+var today= new Date();
+var day = today.getDate(); //Show day as their name (Wed)
+var month = today.getMonth(); // Show month as their name(Aug)
+var fullYear = today.getFullYear();
+var hours = today.getHours();
+var minutes = today.getMinutes();
+var seconds = today.getSeconds();
+if (month <= 6) {
+  calSub = "First half of the year";
+} else {
+calSub = "Second half of the year";
+}
+dayAndTime = `${today} and its the ${calSub}`;
+
+var today= new Date().toLocaleTimeString();// will show HH:MM:SS Am/Pm
+console.log(today);
+
+var today= new Date().toLocaleDateString();// will show as MM/DD/YYYY
+console.log(today);
+
+var today= new Date().toLocaleString(); // Will show MM/DD/YYYY and HH:MM:SS Am/Pm
+console.log(today);
+
+//BMI Calculator Project
+var weight = parseInt(prompt('Please enter your weight(KG).', '0'));
+var height = parseInt(prompt('Please enter your height(CM).', '0'));
+var error = 'Please enter a valid input!';
+var bmi =(weight/height/height)*10000
+bmi = bmi.toFixed(2);
+
+if (bmi<=18.5){
+message = `Your BMI: ${bmi} You are underweight`;
+} else if ( bmi > 18.5 && bmi<= 24.9){
+message =`Your BMI: ${bmi} You are normal`;
+} else if (bmi > 24.9 && bmi <= 29.9){
+message =`Your BMI: ${bmi} You are overweight`;
+} else {
+message =`Your BMI: ${bmi} You are obese`;
+}
+if (weight === 0 || height === 0){
+console.log(error);
+}
+else if (weight < 0 || height < 0){
+console.log('Negative input are not allowed ');
+} else {
+console.log(message);
+}
+conclusion = `your name is ${name} and your age is ${age} years old. with the number given by you which is ${num1} and ${num2}, the sum of addition is ${sum1}, while sum of subtraction is ${sum2}, and sum of division is ${sum3} and lastly sum of multiplication is ${sum4}. as of today which is ${dayAndTime}, your weight is ${weight} and your height is ${height} thus ${message}.`;
+console.log(conclusion);
